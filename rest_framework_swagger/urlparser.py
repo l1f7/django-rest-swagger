@@ -107,6 +107,7 @@ class UrlParser(object):
         path = simplify_regex(prefix + pattern.regex.pattern)
 
         if filter_path is not None:
+            filter_path = filter_path.rstrip('/') + '/'
             if filter_path not in path:
                 return None
 
